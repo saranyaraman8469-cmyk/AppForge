@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --forge-bg:          #F4F7FA;
+    --forge-bg-sec:      #EAEFF5;
+    --forge-card:        #FFFFFF;
+    --forge-border:      #D0D9E2;
+    --forge-copper:      #FF7A3D;
+    --forge-gold:        #F5B942;
+    --forge-text:        #0B0D10;
+    --forge-text-body:   #2A3440;
+    --forge-muted:       #5C6878;
+    --forge-silver:      #C8D0D9;
+  }
+
+  .dark {
+    --forge-bg:          #0B0D10;
+    --forge-bg-sec:      #15191F;
+    --forge-card:        #1C222A;
+    --forge-border:      #29313A;
+    --forge-copper:      #FF7A3D;
+    --forge-gold:        #F5B942;
+    --forge-text:        #F4F7FA;
+    --forge-text-body:   #AAB4BF;
+    --forge-muted:       #8D98A5;
+    --forge-silver:      #C8D0D9;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--forge-bg);
+    color: var(--forge-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.25s ease, color 0.25s ease;
+  }
+
+  code, pre {
+    font-family: 'JetBrains Mono', Consolas, Monaco, 'Courier New', monospace;
+  }
+
+  ::selection {
+    background: rgba(255, 122, 61, 0.35);
+    color: #F4F7FA;
+  }
+}
+
+/* ── Custom Forge Scrollbars ── */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 122, 61, 0.25);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 122, 61, 0.5);
+}
+
+/* ── Global Pattern ── */
+.obsidian-pattern {
+  background-image: radial-gradient(rgba(255, 122, 61, 0.04) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ── Ambient Glow Orbs ── */
+.forge-glow-copper {
+  position: absolute;
+  width: 650px;
+  height: 350px;
+  background: radial-gradient(ellipse, rgba(255, 122, 61, 0.14) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(50px);
+}
+.forge-glow-gold {
+  position: absolute;
+  width: 550px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(245, 185, 66, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+/* ── Signature Gradient Text (#FF7A3D → #F5B942) ── */
+.text-gradient-copper {
+  background: linear-gradient(135deg, #FF7A3D 0%, #F5B942 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-metallic {
+  background: linear-gradient(135deg, #F4F7FA 0%, #C8D0D9 50%, #8D98A5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glowing Buttons (Obsidian Forge) ── */
+.btn-forge-copper {
+  background: linear-gradient(135deg, #FF7A3D 0%, #F5B942 100%);
+  color: #0B0D10;
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(255, 122, 61, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.btn-forge-copper:hover {
+  background: linear-gradient(135deg, #F5B942 0%, #FF7A3D 100%);
+  box-shadow: 0 6px 28px rgba(255, 122, 61, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+.btn-forge-copper:active {
+  transform: scale(0.97);
+}
+
+/* ── Stepper Track ── */
+.stepper-track-copper {
+  background: linear-gradient(90deg, 
+    #FF7A3D 0%,
+    #F5B942 50%, 
+    #36D399 100%
+  );
+}
+
+/* ── Loading Skeleton Pulse ── */
+.skeleton {
+  background: linear-gradient(90deg, 
+    rgba(41,49,58,0.3) 25%, 
+    rgba(41,49,58,0.7) 50%, 
+    rgba(41,49,58,0.3) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
+}
